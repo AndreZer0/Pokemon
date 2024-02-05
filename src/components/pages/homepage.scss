@@ -392,44 +392,60 @@
 
 /* Media Query per rendere il design responsive */
 @media only screen and (max-width: 768px) {
-  .sfondo {
-    height: 100vh;
-    width: 100vw;
-  }
+  // .sfondo {
+  //   height: 100vh;
+  //   width: 100vw;
+  // }
   .container {
     flex-direction: column-reverse;
-    padding-top: 150px;
-    height: 80%;
+    max-height: 100%;
   }
 
   .card-circle {
-    height: 50px;
-    width: 50px;
+    height: 80px;
+    width: 80px;
   }
 
   .card-circle img {
-    height: 30px;
-    width: 30px;
+    height: 40px;
+    width: 40px;
   }
 
-  .dialogo {
-    width: 80%;
-  }
-  .professor-intro {
-    font-size: 12px;
-    line-height: 0px;
-  }
-  .team {
-    margin-top: 30px;
-    margin: auto;
-    width: 60%;
-    height: 50%;
-  }
   .pokemon-info p {
-    font-size: 4px;
+    font-size: 9px;
+  }
+
+  .team {
+    margin-left: 2em;
+    height: 400px;
+    width: 200px;
+    margin-bottom: 2em;
+  }
+  // .pokemon-info p {
+  //   font-size: 4px;
+  // }
+  .professore {
+    text-align: start;
+    width: 300px;
   }
   .professore img {
     width: 300px;
     height: 250px;
+    margin-top: 2em;
+  }
+  .dialogo {
+    height: 120px;
+    width: 100%;
+    margin-bottom: 2em !important;
+  }
+  .professor-intro {
+    font-size: 8px;
+    line-height: 0px !important;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .professore {
+    margin-top: 4em;
   }
 }
