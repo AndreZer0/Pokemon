@@ -262,7 +262,7 @@ const Homepage = () => {
           <div className='team'>
             {pokemonData.map((pokemon, index) => generateCard(pokemon, index))}
 
-            <div>
+            <div className='bottone'>
               <button
                 className='pokeball'
                 onClick={getRandomPokemon}
