@@ -108,7 +108,7 @@ const Homepage = () => {
         clearInterval(interval);
         setDialogText(pokemonDialog);
       }
-    }, 50);
+    }, 20);
 
     return interval;
   };
@@ -127,7 +127,7 @@ const Homepage = () => {
         clearInterval(interval);
         setDialogText(congratulationsText);
       }
-    }, 50);
+    }, 25);
 
     return interval;
   };
