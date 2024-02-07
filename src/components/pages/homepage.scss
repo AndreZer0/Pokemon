@@ -164,6 +164,8 @@
 
   .pokemon-info p {
     font-size: 7px;
+    text-shadow: 0.5px 0.5px 0.5px #000, -0.5px -0.5px 0.5px #000,
+      0.5px -0.5px 0.5px #000, -0.5px 0.5px 0.5px #000;
   }
 
   .team {

@@ -141,7 +141,7 @@ const Homepage = () => {
             {loading ? (
               <div className='loading-container'>
                 <svg
-                  class='pl'
+                  className='pl'
                   viewBox='0 0 160 160'
                   width='160px'
                   height='160px'
@@ -183,9 +183,9 @@ const Homepage = () => {
                   </defs>
 
                   <g>
-                    <g class='pl__ring-rotate'>
+                    <g className='pl__ring-rotate'>
                       <circle
-                        class='pl__ring-stroke'
+                        className='pl__ring-stroke'
                         cx='80'
                         cy='80'
                         r='72'
@@ -200,9 +200,9 @@ const Homepage = () => {
                     </g>
                   </g>
                   <g mask='url(#mask1)'>
-                    <g class='pl__ring-rotate'>
+                    <g className='pl__ring-rotate'>
                       <circle
-                        class='pl__ring-stroke'
+                        className='pl__ring-stroke'
                         cx='80'
                         cy='80'
                         r='72'
@@ -225,49 +225,49 @@ const Homepage = () => {
                       stroke-linecap='round'
                       transform='translate(80,80)'>
                       <polyline
-                        class='pl__tick'
+                        className='pl__tick'
                         stroke='hsl(223,10%,90%)'
                         points='0,2 0,14'
                         transform='rotate(-135,0,0) translate(0,40)'
                       />
                       <polyline
-                        class='pl__tick'
+                        className='pl__tick'
                         stroke='hsl(223,10%,90%)'
                         points='0,2 0,14'
                         transform='rotate(-90,0,0) translate(0,40)'
                       />
                       <polyline
-                        class='pl__tick'
+                        className='pl__tick'
                         stroke='hsl(223,10%,90%)'
                         points='0,2 0,14'
                         transform='rotate(-45,0,0) translate(0,40)'
                       />
                       <polyline
-                        class='pl__tick'
+                        className='pl__tick'
                         stroke='hsl(223,10%,90%)'
                         points='0,2 0,14'
                         transform='rotate(0,0,0) translate(0,40)'
                       />
                       <polyline
-                        class='pl__tick'
+                        className='pl__tick'
                         stroke='hsl(223,10%,90%)'
                         points='0,2 0,14'
                         transform='rotate(45,0,0) translate(0,40)'
                       />
                       <polyline
-                        class='pl__tick'
+                        className='pl__tick'
                         stroke='hsl(223,10%,90%)'
                         points='0,2 0,14'
                         transform='rotate(90,0,0) translate(0,40)'
                       />
                       <polyline
-                        class='pl__tick'
+                        className='pl__tick'
                         stroke='hsl(223,10%,90%)'
                         points='0,2 0,14'
                         transform='rotate(135,0,0) translate(0,40)'
                       />
                       <polyline
-                        class='pl__tick'
+                        className='pl__tick'
                         stroke='hsl(223,10%,90%)'
                         points='0,2 0,14'
                         transform='rotate(180,0,0) translate(0,40)'
@@ -282,49 +282,49 @@ const Homepage = () => {
                       stroke-linecap='round'
                       transform='translate(80,80)'>
                       <polyline
-                        class='pl__tick'
+                        className='pl__tick'
                         stroke='hsl(223,90%,80%)'
                         points='0,2 0,14'
                         transform='rotate(-135,0,0) translate(0,40)'
                       />
                       <polyline
-                        class='pl__tick'
+                        className='pl__tick'
                         stroke='hsl(223,90%,80%)'
                         points='0,2 0,14'
                         transform='rotate(-90,0,0) translate(0,40)'
                       />
                       <polyline
-                        class='pl__tick'
+                        className='pl__tick'
                         stroke='hsl(223,90%,80%)'
                         points='0,2 0,14'
                         transform='rotate(-45,0,0) translate(0,40)'
                       />
                       <polyline
-                        class='pl__tick'
+                        className='pl__tick'
                         stroke='hsl(223,90%,80%)'
                         points='0,2 0,14'
                         transform='rotate(0,0,0) translate(0,40)'
                       />
                       <polyline
-                        class='pl__tick'
+                        className='pl__tick'
                         stroke='hsl(223,90%,80%)'
                         points='0,2 0,14'
                         transform='rotate(45,0,0) translate(0,40)'
                       />
                       <polyline
-                        class='pl__tick'
+                        className='pl__tick'
                         stroke='hsl(223,90%,80%)'
                         points='0,2 0,14'
                         transform='rotate(90,0,0) translate(0,40)'
                       />
                       <polyline
-                        class='pl__tick'
+                        className='pl__tick'
                         stroke='hsl(223,90%,80%)'
                         points='0,2 0,14'
                         transform='rotate(135,0,0) translate(0,40)'
                       />
                       <polyline
-                        class='pl__tick'
+                        className='pl__tick'
                         stroke='hsl(223,90%,80%)'
                         points='0,2 0,14'
                         transform='rotate(180,0,0) translate(0,40)'
@@ -335,7 +335,7 @@ const Homepage = () => {
                   <g>
                     <g transform='translate(64,28)'>
                       <g
-                        class='pl__arrows'
+                        className='pl__arrows'
                         transform='rotate(45,16,52)'>
                         <path
                           fill='hsl(3,90%,55%)'
@@ -351,7 +351,7 @@ const Homepage = () => {
                   <g mask='url(#mask2)'>
                     <g transform='translate(64,28)'>
                       <g
-                        class='pl__arrows'
+                        className='pl__arrows'
                         transform='rotate(45,16,52)'>
                         <path
                           fill='hsl(333,90%,55%)'
