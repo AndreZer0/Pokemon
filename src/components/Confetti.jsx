@@ -11,7 +11,7 @@ const ConfettiComponent = () => {
       height={window.innerHeight}
       numberOfPieces={800}
       recycle={false}
-      gravity={0.1}
+      gravity={0.2}
       run={true}
     />
   );
