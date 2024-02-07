@@ -52,6 +52,7 @@
   font-size: 18px;
   color: #333;
   line-height: 28px;
+  font-weight: bold;
 }
 
 .professore img {
@@ -142,11 +143,7 @@
 }
 
 /* Media Query per rendere il design responsive */
-@media only screen and (max-width: 908px) {
-  // .sfondo {
-  //   height: 100vh;
-  //   width: 100vw;
-  // }
+@media only screen and (max-width: 1300px) {
   .sfondo {
     height: 100vh;
   }
@@ -174,9 +171,7 @@
     width: 300px;
     margin-bottom: 2em;
   }
-  // .pokemon-info p {
-  //   font-size: 4px;
-  // }
+
   .professore {
     text-align: start;
     width: 300px;
@@ -214,5 +209,106 @@
     border: 2px solid black;
     box-shadow: inset -5px -2.5px 0 0 rgba(0, 0, 0, 0.2);
     animation: shake 1.25s cubic-bezier(0.36, 0.07, 0.19, 0.97) 1.5s 3;
+  }
+}
+
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pl {
+  display: block;
+  width: 9.375em;
+  height: 9.375em;
+}
+.pl__arrows,
+.pl__ring-rotate,
+.pl__ring-stroke,
+.pl__tick {
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+.pl__arrows {
+  animation-name: arrows;
+  transform: rotate(45deg);
+  transform-origin: 16px 52px;
+}
+.pl__ring-rotate,
+.pl__ring-stroke {
+  transform-origin: 80px 80px;
+}
+.pl__ring-rotate {
+  animation-name: ringRotate;
+}
+.pl__ring-stroke {
+  animation-name: ringStroke;
+  transform: rotate(-45deg);
+}
+.pl__tick {
+  animation-name: tick;
+}
+.pl__tick:nth-child(2) {
+  animation-delay: -1.75s;
+}
+.pl__tick:nth-child(3) {
+  animation-delay: -1.5s;
+}
+.pl__tick:nth-child(4) {
+  animation-delay: -1.25s;
+}
+.pl__tick:nth-child(5) {
+  animation-delay: -1s;
+}
+.pl__tick:nth-child(6) {
+  animation-delay: -0.75s;
+}
+.pl__tick:nth-child(7) {
+  animation-delay: -0.5s;
+}
+.pl__tick:nth-child(8) {
+  animation-delay: -0.25s;
+}
+
+/* Animations */
+@keyframes arrows {
+  from {
+    transform: rotate(45deg);
+  }
+  to {
+    transform: rotate(405deg);
+  }
+}
+@keyframes ringRotate {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(720deg);
+  }
+}
+@keyframes ringStroke {
+  from,
+  to {
+    stroke-dashoffset: 452;
+    transform: rotate(-45deg);
+  }
+  50% {
+    stroke-dashoffset: 169.5;
+    transform: rotate(-180deg);
+  }
+}
+@keyframes tick {
+  from,
+  3%,
+  47%,
+  to {
+    stroke-dashoffset: -12;
+  }
+  14%,
+  36% {
+    stroke-dashoffset: 0;
   }
 }
