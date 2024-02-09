@@ -52,7 +52,7 @@ const Homepage = () => {
 
     setPokemonData(randomPokemonData);
 
-    setShowRetryButton(false);
+    setShowRetryButton(true);
     setShowCongratulations(true);
     setDialogText('');
     clearInterval(intervalRef.current);
@@ -372,7 +372,9 @@ const Homepage = () => {
             )}
 
             {!loading && !buttonClicked && !showRetryButton && (
-              <div className='bottone'>
+              <div
+                className='bottone'
+                style={{ visibility: loading ? 'hidden' : 'visible' }}>
                 <button
                   className='pokeball'
                   onClick={getRandomPokemon}></button>
