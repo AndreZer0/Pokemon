@@ -359,6 +359,10 @@
     animation: shake 1.25s cubic-bezier(0.36, 0.07, 0.19, 0.97) 1.5s 3;
   }
 }
+.pokeball:hover {
+  cursor: pointer;
+  background: radial-gradient(rgb(237, 59, 59) 15px);
+}
 @media only screen and (max-width: 375px) {
   .sfondo {
     height: 100vh;

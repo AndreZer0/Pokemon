@@ -382,11 +382,11 @@ const Homepage = () => {
             {showRetryButton && (
               <div
                 className='bottone'
-                style={{ visibility: loading ? 'hidden' : 'visible' }}>
+                style={{ display: loading ? 'none' : 'block' }}>
                 <button
                   className='retry'
-                  onClick={getRandomPokemon}>
-                  Rigenera
+                  onClick={handleRetryButtonClick}>
+                  Retry
                 </button>
               </div>
             )}
