@@ -385,8 +385,8 @@ const Homepage = () => {
                 style={{ display: loading ? 'none' : 'block' }}>
                 <button
                   className='retry'
-                  onClick={handleRetryButtonClick}>
-                  Retry
+                  onClick={getRandomPokemon}>
+                  Rigenera
                 </button>
               </div>
             )}
