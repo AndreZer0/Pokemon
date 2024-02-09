@@ -111,6 +111,17 @@
   box-shadow: inset -16px -8px 0 0 rgba(0, 0, 0, 0.2);
   animation: shake 1.25s cubic-bezier(0.36, 0.07, 0.19, 0.97) 1.5s 3;
 }
+.pokeball:hover {
+  cursor: pointer;
+  background: radial-gradient(
+      rgb(237, 59, 59) 16px,
+      black 17px 18px,
+      white 19px 24px,
+      black 25px 32px,
+      transparent 33px
+    ),
+    linear-gradient(to bottom, red 0 80px, black 81px 96px, white 97px 100%);
+}
 /* Animation */
 @keyframes shake {
   0% {
