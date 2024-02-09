@@ -372,9 +372,7 @@ const Homepage = () => {
             )}
 
             {!loading && !buttonClicked && !showRetryButton && (
-              <div
-                className='bottone'
-                style={{ visibility: loading ? 'hidden' : 'visible' }}>
+              <div className='bottone'>
                 <button
                   className='pokeball'
                   onClick={getRandomPokemon}></button>
@@ -382,7 +380,9 @@ const Homepage = () => {
             )}
 
             {showRetryButton && (
-              <div className='bottone'>
+              <div
+                className='bottone'
+                style={{ visibility: loading ? 'hidden' : 'visible' }}>
                 <button
                   className='retry'
                   onClick={getRandomPokemon}>
