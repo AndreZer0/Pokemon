@@ -10,10 +10,11 @@ const Homepage = () => {
 
   const [pokemonData, setPokemonData] = useState([]);
   const [buttonClicked, setButtonClicked] = useState(false);
-  const [dialogText, setDialogText] = useState('Caricamento in corso...'); // Testo predefinito per il dialogo
+  const [dialogText, setDialogText] = useState('Caricamento in corso...');
   const [showCongratulations, setShowCongratulations] = useState(false);
   const [confetti, setConfetti] = useState(false);
-  const [loading, setLoading] = useState(false); // Aggiungi stato per il caricamento
+  const [loading, setLoading] = useState(false);
+  const [showRetryButton, setShowRetryButton] = useState(false);
 
   const intervalRef = useRef(null);
 
@@ -27,8 +28,7 @@ const Homepage = () => {
   }, []);
 
   const getRandomPokemon = async () => {
-    setLoading(true); // Attiva l'indicatore di caricamento
-
+    setLoading(true);
     const randomPokemonData = [];
     const existingPokemonIds = new Set();
 
@@ -51,19 +51,20 @@ const Homepage = () => {
     }
 
     setPokemonData(randomPokemonData);
-    setButtonClicked(true);
+
+    setShowRetryButton(true);
     setShowCongratulations(true);
-    setDialogText(''); // Ripristina il testo del dialogo dopo il caricamento completato
+    setDialogText('');
     clearInterval(intervalRef.current);
     intervalRef.current = animateCongratulations();
 
-    setConfetti(true); // Attiva l'effetto di coriandoli
+    setConfetti(true);
 
     setTimeout(() => {
       setConfetti(false);
     }, 6000);
 
-    setLoading(false); // Disattiva l'indicatore di caricamento
+    setLoading(false);
   };
 
   const generateCard = (data, index) => {
@@ -370,14 +371,21 @@ const Homepage = () => {
               pokemonData.map((pokemon, index) => generateCard(pokemon, index))
             )}
 
-            {!loading && !buttonClicked && (
+            {!loading && !buttonClicked && !showRetryButton && (
               <div className='bottone'>
                 <button
                   className='pokeball'
-                  onClick={getRandomPokemon}
-                  style={{
-                    visibility: buttonClicked ? 'hidden' : 'visible',
-                  }}></button>
+                  onClick={getRandomPokemon}></button>
+              </div>
+            )}
+
+            {showRetryButton && (
+              <div className='bottone'>
+                <button
+                  className='retry'
+                  onClick={getRandomPokemon}>
+                  Rigenera
+                </button>
               </div>
             )}
           </div>

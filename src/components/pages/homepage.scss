@@ -6,7 +6,7 @@
   width: 100vw;
   margin: 0;
   padding: 0;
-
+  background-size: cover;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -94,6 +94,48 @@
   text-transform: capitalize;
 }
 
+.retry {
+  appearance: none;
+  background-color: #ffffff;
+  border-radius: 40em;
+  border-style: none;
+  box-shadow: #adcfff 0 -12px 6px inset;
+  box-sizing: border-box;
+  color: #000000;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system, sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: -0.24px;
+  margin: 0;
+  outline: none;
+  padding: 1rem 1.3rem;
+  quotes: auto;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.15s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.retry:hover {
+  background-color: #ffc229;
+  box-shadow: #ff6314 0 -6px 8px inset;
+  transform: scale(1.125);
+}
+
+.retry:active {
+  transform: scale(1.025);
+}
+
+@media (max-width: 920px) {
+  .retry {
+    font-size: 8px;
+    padding: 0.6rem 1.5rem;
+  }
+}
 .pokeball {
   display: block;
   width: 192px;
@@ -141,87 +183,6 @@
   }
   100% {
     transform: translateX(0) rotate(0);
-  }
-}
-
-.pokeball:disabled {
-  cursor: not-allowed;
-  background: gray;
-}
-
-.pokeball:disabled:hover {
-  animation: none;
-}
-
-/* Media Query per rendere il design responsive */
-@media only screen and (max-width: 1300px) {
-  .sfondo {
-    height: 100vh;
-  }
-  .container {
-    flex-direction: column-reverse;
-    max-height: 100%;
-  }
-
-  .card-circle {
-    height: 80px;
-    width: 80px;
-  }
-
-  .card-circle img {
-    height: 50px;
-    width: 50px;
-  }
-
-  .pokemon-info p {
-    font-size: 7px;
-    text-shadow: 0.5px 0.5px 0.5px #000, -0.5px -0.5px 0.5px #000,
-      0.5px -0.5px 0.5px #000, -0.5px 0.5px 0.5px #000;
-  }
-
-  .team {
-    height: 200px;
-    width: 300px;
-    margin-bottom: 2em;
-  }
-
-  .professore {
-    text-align: start;
-    width: 300px;
-    margin: auto;
-  }
-  .professore img {
-    width: 300px;
-    height: 250px;
-  }
-  .dialogo {
-    height: 180px;
-    width: 100%;
-    margin-bottom: 2em !important;
-  }
-  .professor-intro {
-    font-size: 12px;
-    line-height: 0px !important;
-  }
-  .bottone {
-    height: 40px;
-  }
-  .pokeball {
-    display: block;
-    width: 50px;
-    height: 50px;
-    background: radial-gradient(
-        white 5px,
-        black 5.5px 6px,
-        white 6.5px 8px,
-        black 8.5px 9px,
-        transparent 9.5px
-      ),
-      linear-gradient(to bottom, red 0 22px, black 23px 25px, white 26px 28px);
-    border-radius: 50%;
-    border: 2px solid black;
-    box-shadow: inset -5px -2.5px 0 0 rgba(0, 0, 0, 0.2);
-    animation: shake 1.25s cubic-bezier(0.36, 0.07, 0.19, 0.97) 1.5s 3;
   }
 }
 
@@ -323,5 +284,380 @@
   14%,
   36% {
     stroke-dashoffset: 0;
+  }
+}
+
+/* Media Query per rendere il design responsive */
+@media only screen and (max-width: 1300px) {
+  .sfondo {
+    height: 100vh;
+  }
+  .container {
+    flex-direction: column-reverse;
+    max-height: 100%;
+  }
+
+  .card-circle {
+    height: 80px;
+    width: 80px;
+  }
+
+  .card-circle img {
+    height: 50px;
+    width: 50px;
+  }
+
+  .pokemon-info p {
+    font-size: 7px;
+    text-shadow: 0.5px 0.5px 0.5px #000, -0.5px -0.5px 0.5px #000,
+      0.5px -0.5px 0.5px #000, -0.5px 0.5px 0.5px #000;
+  }
+
+  .team {
+    height: 200px;
+    width: 300px;
+    margin-bottom: 2em;
+  }
+
+  .professore {
+    text-align: start;
+    width: 300px;
+    margin: auto;
+  }
+  .professore img {
+    width: 300px;
+    height: 250px;
+  }
+  .dialogo {
+    height: 180px;
+    width: 100%;
+    margin-bottom: 2em !important;
+  }
+  .professor-intro {
+    font-size: 12px;
+    line-height: 0px !important;
+  }
+  .bottone {
+    height: 40px;
+  }
+  .pokeball {
+    display: block;
+    width: 50px;
+    height: 50px;
+    background: radial-gradient(
+        white 5px,
+        black 5.5px 6px,
+        white 6.5px 8px,
+        black 8.5px 9px,
+        transparent 9.5px
+      ),
+      linear-gradient(to bottom, red 0 22px, black 23px 25px, white 26px 28px);
+    border-radius: 50%;
+    border: 2px solid black;
+    box-shadow: inset -5px -2.5px 0 0 rgba(0, 0, 0, 0.2);
+    animation: shake 1.25s cubic-bezier(0.36, 0.07, 0.19, 0.97) 1.5s 3;
+  }
+}
+@media only screen and (max-width: 375px) {
+  .sfondo {
+    height: 100vh;
+  }
+  .container {
+    flex-direction: column-reverse;
+    max-height: 100%;
+  }
+
+  .card-circle {
+    height: 45px;
+    width: 45px;
+  }
+
+  .card-circle img {
+    height: 30px;
+    width: 30px;
+  }
+
+  .pokemon-info p {
+    font-size: 3px;
+    text-shadow: 0.5px 0.5px 0.5px #000, -0.5px -0.5px 0.5px #000,
+      0.5px -0.5px 0.5px #000, -0.5px 0.5px 0.5px #000;
+  }
+
+  .team {
+    height: 150px;
+    width: 200px;
+    margin-bottom: 1em;
+  }
+
+  .professore {
+    text-align: start;
+    width: 230px;
+    margin: auto;
+  }
+  .professore img {
+    width: 230px;
+    height: 200px;
+  }
+  .dialogo {
+    margin-right: 2em;
+    height: 110px;
+    width: 217px;
+  }
+  .professor-intro {
+    font-size: 6px;
+    line-height: 0px !important;
+  }
+  .bottone {
+    height: 30px;
+  }
+  .pokeball {
+    display: block;
+    width: 40px;
+    height: 40px;
+    background: radial-gradient(
+        white 5px,
+        black 5.5px 6px,
+        white 6.5px 8px,
+        black 8.5px 9px,
+        transparent 9.5px
+      ),
+      linear-gradient(to bottom, red 0 18px, black 19px 21px, white 22px 24px);
+    border-radius: 50%;
+    border: 2px solid black;
+    box-shadow: inset -4px -2px 0 0 rgba(0, 0, 0, 0.2);
+    animation: shake 1.25s cubic-bezier(0.36, 0.07, 0.19, 0.97) 1.5s 3;
+  }
+}
+
+@media only screen and (max-width: 1024px) and (max-height: 600px) {
+  /** @format */
+
+  .sfondo {
+    height: 100vh;
+    background-size: cover;
+  }
+
+  .container {
+    flex-direction: row;
+    display: flex;
+    align-items: center;
+  }
+
+  .card-circle:hover {
+    transform: scale(1.1);
+  }
+
+  .dialogo {
+    margin-right: 2em;
+    height: 150px;
+    width: 260px;
+  }
+
+  .professore {
+    text-align: start;
+    width: 250px;
+    margin: 2em;
+  }
+  .professore img {
+    width: 300px;
+    height: 250px;
+  }
+  .team {
+    height: 350px;
+    width: 400px;
+  }
+  .card-circle {
+    height: 100px;
+    width: 100px;
+  }
+
+  .pokemon-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .pokemon-info img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .pokemon-info p {
+    margin: 5px 0;
+    font-size: 10px;
+    font-family: 'Pokemon Solid', sans-serif;
+    color: rgb(255, 187, 0);
+    text-shadow: 2px 2px 2px #000, -2px -2px 2px #000, 2px -2px 2px #000,
+      -2px 2px 2px #000;
+    letter-spacing: 1px;
+    text-transform: capitalize;
+  }
+  .professor-intro {
+    font-size: 9px;
+    line-height: 0px !important;
+  }
+
+  .bottone {
+    height: 40px;
+  }
+  .pokeball {
+    display: block;
+    width: 70px;
+    height: 70px;
+    background: radial-gradient(
+        white 7px,
+        black 7.5px 8px,
+        white 8.5px 11px,
+        black 11.5px 12.5px,
+        transparent 12.5px
+      ),
+      linear-gradient(to bottom, red 0 31px, black 32px 35px, white 36px 39px);
+    border-radius: 50%;
+    border: 2px solid black;
+    box-shadow: inset -7px -3.5px 0 0 rgba(0, 0, 0, 0.2);
+    animation: shake 1.25s cubic-bezier(0.36, 0.07, 0.19, 0.97) 1.5s 3;
+  }
+
+  .pokeball:hover {
+    cursor: pointer;
+    background: radial-gradient(
+        rgb(237, 59, 59) 16px,
+        black 17px 18px,
+        white 19px 24px,
+        black 25px 32px,
+        transparent 33px
+      ),
+      linear-gradient(to bottom, red 0 80px, black 81px 96px, white 97px 100%);
+  }
+  /* Animation */
+  @keyframes shake {
+    0% {
+      transform: translateX(0) rotate(0);
+    }
+    20% {
+      transform: translateX(-10px) rotate(-20deg);
+    }
+    30% {
+      transform: translateX(10px) rotate(20deg);
+    }
+    50% {
+      transform: translateX(-10px) rotate(-10deg);
+    }
+    60% {
+      transform: translateX(10px) rotate(10deg);
+    }
+    100% {
+      transform: translateX(0) rotate(0);
+    }
+  }
+
+  .pokeball:disabled {
+    cursor: not-allowed;
+    background: gray;
+  }
+
+  .pokeball:disabled:hover {
+    animation: none;
+  }
+
+  .loading-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .pl {
+    display: block;
+    width: 9.375em;
+    height: 9.375em;
+  }
+  .pl__arrows,
+  .pl__ring-rotate,
+  .pl__ring-stroke,
+  .pl__tick {
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+  .pl__arrows {
+    animation-name: arrows;
+    transform: rotate(45deg);
+    transform-origin: 16px 52px;
+  }
+  .pl__ring-rotate,
+  .pl__ring-stroke {
+    transform-origin: 80px 80px;
+  }
+  .pl__ring-rotate {
+    animation-name: ringRotate;
+  }
+  .pl__ring-stroke {
+    animation-name: ringStroke;
+    transform: rotate(-45deg);
+  }
+  .pl__tick {
+    animation-name: tick;
+  }
+  .pl__tick:nth-child(2) {
+    animation-delay: -1.75s;
+  }
+  .pl__tick:nth-child(3) {
+    animation-delay: -1.5s;
+  }
+  .pl__tick:nth-child(4) {
+    animation-delay: -1.25s;
+  }
+  .pl__tick:nth-child(5) {
+    animation-delay: -1s;
+  }
+  .pl__tick:nth-child(6) {
+    animation-delay: -0.75s;
+  }
+  .pl__tick:nth-child(7) {
+    animation-delay: -0.5s;
+  }
+  .pl__tick:nth-child(8) {
+    animation-delay: -0.25s;
+  }
+
+  /* Animations */
+  @keyframes arrows {
+    from {
+      transform: rotate(45deg);
+    }
+    to {
+      transform: rotate(405deg);
+    }
+  }
+  @keyframes ringRotate {
+    from {
+      transform: rotate(0);
+    }
+    to {
+      transform: rotate(720deg);
+    }
+  }
+  @keyframes ringStroke {
+    from,
+    to {
+      stroke-dashoffset: 452;
+      transform: rotate(-45deg);
+    }
+    50% {
+      stroke-dashoffset: 169.5;
+      transform: rotate(-180deg);
+    }
+  }
+  @keyframes tick {
+    from,
+    3%,
+    47%,
+    to {
+      stroke-dashoffset: -12;
+    }
+    14%,
+    36% {
+      stroke-dashoffset: 0;
+    }
   }
 }
