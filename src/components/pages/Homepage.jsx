@@ -64,7 +64,9 @@ const Homepage = () => {
       setConfetti(false);
     }, 6000);
 
-    setLoading(false);
+    setTimeout(() => {
+      setLoading(false);
+    }, 1000);
   };
 
   const generateCard = (data, index) => {
