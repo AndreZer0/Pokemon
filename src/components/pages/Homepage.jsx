@@ -52,7 +52,7 @@ const Homepage = () => {
 
     setPokemonData(randomPokemonData);
 
-    setShowRetryButton(true);
+    setShowRetryButton(false);
     setShowCongratulations(true);
     setDialogText('');
     clearInterval(intervalRef.current);
