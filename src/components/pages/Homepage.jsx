@@ -1,7 +1,144 @@
 /** @format */
 
-import React, { useState, useEffect, useRef } from 'react';
+// /** @format */
 
+// import React, { useState, useEffect, useRef } from 'react';
+
+// import ConfettiComponent from '../Confetti';
+// import './homepage.scss';
+
+// const Homepage = () => {
+//   const URL = 'https://pokeapi.co/api/v2/pokemon/';
+
+//   const [pokemonData, setPokemonData] = useState([]);
+//   const [buttonClicked, setButtonClicked] = useState(false);
+//   const [dialogText, setDialogText] = useState('Caricamento in corso...');
+//   const [showCongratulations, setShowCongratulations] = useState(false);
+//   const [confetti, setConfetti] = useState(false);
+//   const [loading, setLoading] = useState(false);
+//   const [showRetryButton, setShowRetryButton] = useState(false);
+//   const [confettiActivated, setConfettiActivated] = useState(false);
+//   const [retryClicked, setRetryClicked] = useState(false);
+
+//   const intervalRef = useRef(null);
+
+//   useEffect(() => {
+//     const initialPokemonData = Array.from({ length: 6 }).fill(null);
+//     setPokemonData(initialPokemonData);
+
+//     intervalRef.current = animateText();
+
+//     return () => clearInterval(intervalRef.current);
+//   }, []);
+
+//   const getRandomPokemon = async () => {
+//     setLoading(true);
+//     const randomPokemonData = [];
+//     const existingPokemonIds = new Set();
+
+//     while (randomPokemonData.length < 6) {
+//       const id = Math.floor(Math.random() * 150) + 1;
+
+//       if (!existingPokemonIds.has(id)) {
+//         existingPokemonIds.add(id);
+
+//         const finalUrl = URL + id;
+
+//         try {
+//           const response = await fetch(finalUrl);
+//           const data = await response.json();
+//           randomPokemonData.push(data);
+//         } catch (error) {
+//           console.error('Errore nella richiesta API:', error);
+//         }
+//       }
+//     }
+
+//     setPokemonData(randomPokemonData);
+//     setConfettiActivated(true);
+//     setShowRetryButton(true);
+//     setShowCongratulations(true);
+//     setDialogText('');
+//     clearInterval(intervalRef.current);
+//     intervalRef.current = animateCongratulations();
+
+//     setConfetti(true);
+
+//     setTimeout(() => {
+//       setConfetti(false);
+//     }, 6000);
+
+//     setTimeout(() => {
+//       setLoading(false);
+//     }, 1000);
+//   };
+
+//   const generateCard = (data, index) => {
+//     if (!data) {
+//       return (
+//         <div
+//           key={index}
+//           className='card-circle'>
+//           <div className='pokemon-info'></div>
+//         </div>
+//       );
+//     }
+
+//     const imgSrc = data.sprites.other.dream_world.front_default;
+//     const pokeName = data.name[0].toUpperCase() + data.name.slice(1);
+
+//     return (
+//       <div
+//         key={index}
+//         className='card-circle'>
+//         <div className='pokemon-info'>
+//           <img
+//             src={imgSrc}
+//             alt={pokeName}
+//           />
+//           <p>{pokeName}</p>
+//         </div>
+//       </div>
+//     );
+//   };
+
+//   const animateText = () => {
+//     let i = 0;
+//     const pokemonDialog =
+//       'Ciao, giovane Allenatore! Benvenuto nel meraviglioso mondo dei Pokémon! Sono il Professor Oak, il tuo mentore in questa straordinaria avventura. Prima di iniziare, ricorda che ci sono Pokémon da scoprire, sfide da affrontare e amicizie da stringere. Scegli la squadra con la quale affronterai questo viaggio, clicca sulla Pokèball!';
+//     setDialogText(pokemonDialog[0]);
+//     const interval = setInterval(() => {
+//       setDialogText(prevText => prevText + pokemonDialog[i]);
+//       i++;
+
+//       if (i === pokemonDialog.length) {
+//         clearInterval(interval);
+//         setDialogText(pokemonDialog);
+//       }
+//     }, 10);
+
+//     return interval;
+//   };
+
+//   const animateCongratulations = () => {
+//     const congratulationsText =
+//       'Congratulazioni! Questi sono i tuoi compagni per la grande avventura che ti attende! Si parte!';
+//     setDialogText('');
+//     let i = 0;
+//     setDialogText(congratulationsText[0]);
+//     const interval = setInterval(() => {
+//       setDialogText(prevText => prevText + congratulationsText[i]);
+//       i++;
+
+//       if (i === congratulationsText.length) {
+//         clearInterval(interval);
+//         setDialogText(congratulationsText);
+//       }
+//     }, 10);
+
+//     return interval;
+//   };
+import React, { useState, useEffect, useRef } from 'react';
 import ConfettiComponent from '../Confetti';
 import './homepage.scss';
 
@@ -12,9 +149,9 @@ const Homepage = () => {
   const [buttonClicked, setButtonClicked] = useState(false);
   const [dialogText, setDialogText] = useState('Caricamento in corso...');
   const [showCongratulations, setShowCongratulations] = useState(false);
-  const [confetti, setConfetti] = useState(false);
   const [loading, setLoading] = useState(false);
   const [showRetryButton, setShowRetryButton] = useState(false);
+  const [confettiActive, setConfettiActive] = useState(false); // Stato per controllare se i coriandoli devono essere attivi
 
   const intervalRef = useRef(null);
 
@@ -58,11 +195,7 @@ const Homepage = () => {
     clearInterval(intervalRef.current);
     intervalRef.current = animateCongratulations();
 
-    setConfetti(true);
-
-    setTimeout(() => {
-      setConfetti(false);
-    }, 6000);
+    setConfettiActive(true); // Attiva i coriandoli quando viene generata la squadra
 
     setTimeout(() => {
       setLoading(false);
@@ -135,10 +268,22 @@ const Homepage = () => {
     return interval;
   };
 
+  const handlePokeballClick = () => {
+    getRandomPokemon();
+    setButtonClicked(true);
+  };
+
+  const handleRetryClick = () => {
+    setShowRetryButton(false);
+    setButtonClicked(false);
+    setConfettiActive(false); // Disattiva i coriandoli quando si preme il pulsante "Retry"
+    intervalRef.current = animateText();
+  };
+
   return (
     <>
       <div className='sfondo'>
-        {confetti && <ConfettiComponent />}{' '}
+        <ConfettiComponent active={confettiActive} />
         <div className='container'>
           <div className='team'>
             {loading ? (
