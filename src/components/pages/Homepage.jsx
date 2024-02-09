@@ -1,7 +1,7 @@
 /** @format */
 
 import React, { useState, useEffect, useRef } from 'react';
-import { useScreenshot } from 'use-react-screenshot';
+
 import ConfettiComponent from '../Confetti';
 import './homepage.scss';
 
@@ -27,43 +27,6 @@ const Homepage = () => {
     return () => clearInterval(intervalRef.current);
   }, []);
 
-  // const getRandomPokemon = async () => {
-  //   setLoading(true);
-  //   const randomPokemonData = [];
-  //   const existingPokemonIds = new Set();
-
-  //   while (randomPokemonData.length < 6) {
-  //     const id = Math.floor(Math.random() * 150) + 1;
-
-  //     if (!existingPokemonIds.has(id)) {
-  //       existingPokemonIds.add(id);
-
-  //       const finalUrl = URL + id;
-
-  //       try {
-  //         const response = await fetch(finalUrl);
-  //         const data = await response.json();
-  //         randomPokemonData.push(data);
-  //       } catch (error) {
-  //         console.error('Errore nella richiesta API:', error);
-  //       }
-  //     }
-  //   }
-
-  //   setPokemonData(randomPokemonData);
-
-  //   setShowRetryButton(true);
-  //   setShowCongratulations(true);
-  //   setDialogText('');
-  //   clearInterval(intervalRef.current);
-  //   intervalRef.current = animateCongratulations();
-
-  //   setConfetti(true);
-
-  //   setTimeout(() => {
-  //     setConfetti(false);
-  //   }, 6000);
-  // };
   const getRandomPokemon = async () => {
     setLoading(true);
     const randomPokemonData = [];
@@ -96,14 +59,13 @@ const Homepage = () => {
     intervalRef.current = animateCongratulations();
 
     setConfetti(true);
+
     setTimeout(() => {
       setConfetti(false);
     }, 6000);
-  };
 
-  setTimeout(() => {
     setLoading(false);
-  }, 1500);
+  };
 
   const generateCard = (data, index) => {
     if (!data) {
